@@ -41,14 +41,17 @@ body {
     line-height: 1.1;
 }
 
-.logo h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin: 0;
-    letter-spacing: 3px;
+
+.logo h1{
+  font-family: 'playfair Display',serif;
+  font-size:32px;
+  font-weight:700;
+  background: linear-gradient(90deg,#6B5B95,#B8A1D9);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:4px;
 }
+
 
 .logo span {
     display: block;
