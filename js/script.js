@@ -1,3 +1,6 @@
+// =========================
+// Hero Text Rotation
+// =========================
 const heroTexts = [
   {text: "ALISAR, where the Dead Sea’s minerals meet luxurious skincare.", 
    btn: {text: "Discover More", link:"#about"}, 
@@ -24,9 +27,8 @@ const heroBtn = document.getElementById("hero-btn");
 const secondaryBtn = document.querySelector(".cta-buttons .secondary-btn");
 const heroSection = document.querySelector(".hero");
 
-// Function to update hero text and buttons
 function updateHeroContent() {
-  if (!heroElement || !heroBtn) return; // Basic error handling
+  if (!heroElement || !heroBtn) return;
 
   heroElement.style.opacity = 0;
   heroBtn.style.opacity = 0;
@@ -53,13 +55,12 @@ function updateHeroContent() {
   }, 1000);
 }
 
-// IntersectionObserver for Hero Section to manage text rotation
 let heroInterval;
 const heroObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       if (!heroInterval) {
-        updateHeroContent(); // Initial call
+        updateHeroContent();
         heroInterval = setInterval(updateHeroContent, 3000);
       }
     } else {
@@ -67,16 +68,15 @@ const heroObserver = new IntersectionObserver((entries) => {
       heroInterval = null;
     }
   });
-}, { threshold: 0.5 }); // Trigger when 50% of the hero section is visible
+}, { threshold: 0.5 });
 
-if (heroSection) {
-  heroObserver.observe(heroSection);
-}
+if (heroSection) heroObserver.observe(heroSection);
 
-// Consolidated Scroll Reveal Animation
-const faders = document.querySelectorAll(
-  ".fade-up, .fade-left, .fade-up-section, .private-label-section .fade-up"
-);
+
+// =========================
+// Fade Animations on Scroll
+// =========================
+const faders = document.querySelectorAll(".fade-up, .fade-left, .fade-right, .fade-up-section, .private-label-section .fade-up");
 
 const appearOptions = {
   threshold: 0.3,
@@ -84,18 +84,19 @@ const appearOptions = {
 };
 
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add("show");
     observer.unobserve(entry.target);
   });
 }, appearOptions);
 
-faders.forEach((fader) => {
-  appearOnScroll.observe(fader);
-});
+faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Number Counter Animation with IntersectionObserver
+
+// =========================
+// Number Counters
+// =========================
 const counters = document.querySelectorAll(".counter-box h3");
 const numbersSection = document.querySelector(".numbers-section");
 let startedCounting = false;
@@ -106,10 +107,9 @@ const countObserver = new IntersectionObserver((entries, observer) => {
       startedCounting = true;
       counters.forEach(counter => {
         const target = +counter.getAttribute("data-target");
-        const duration = 2000; // 2 seconds
+        const duration = 2000;
         const step = target / (duration / 20);
         let count = 0;
-
         const update = setInterval(() => {
           count += step;
           if (count >= target) {
@@ -119,25 +119,75 @@ const countObserver = new IntersectionObserver((entries, observer) => {
           counter.textContent = Math.floor(count);
         }, 20);
       });
-      observer.unobserve(entry.target); // Stop observing once counting starts
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+}, { threshold: 0.5 });
 
-if (numbersSection) {
-  countObserver.observe(numbersSection);
+if (numbersSection) countObserver.observe(numbersSection);
+
+
+// =========================
+// Our Services Section
+// =========================
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+
+    const serviceCards = document.querySelectorAll(".our-services-section .service-card");
+    const servicesCTA = document.querySelector(".services-cta");
+
+    if (servicesCTA) {
+        servicesCTA.style.opacity = 0;
+        servicesCTA.style.transform = "translateY(20px)";
+    }
+
+    const serviceObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("show");
+
+                    // Show icons inside the card
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons({ parent: entry.target });
+                    }
+
+                    // Show CTA button after all cards appear
+                    const allVisible = Array.from(serviceCards).every(card => card.classList.contains("show"));
+                    if (allVisible && servicesCTA) {
+                        servicesCTA.style.transition = "all 0.6s ease";
+                        servicesCTA.style.opacity = 1;
+                        servicesCTA.style.transform = "translateY(0)";
+                    }
+                }, i * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    serviceCards.forEach(card => serviceObserver.observe(card));
+});
+
+
+// =========================
+// Alisar Brand Section
+// =========================
+
+
+const alisarSection = document.querySelector(".alisar-brand-section");
+
+const alisarObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+if(alisarSection){
+  alisarObserver.observe(alisarSection);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const fadeElements = document.querySelectorAll(".fade-right, .fade-up, .fade-left");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  });
-
-  fadeElements.forEach((el) => observer.observe(el));
-});

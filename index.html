@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest" async></script>
     <script src="https://cdn.tailwindcss.com" async></script>
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.253.0/dist/lucide.min.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +31,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Our Services</a></li>
+                <li><a href="#our-services">Our Services</a></li>
                 <li><a href="#private-label">Private Label</a></li>
                 <li><a href="#brand">Alisar Brand</a></li>
                 <li><a href="#quality">Quality</a></li>
@@ -42,11 +44,9 @@
     <main>
         <section class="hero"
             style="background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('deadsea.jpg') center/cover no-repeat;">
-
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 id="hero-text">ALISAR, where the Dead Sea’s minerals meet luxurious skincare.</h1>
-
                 <div class="cta-buttons">
                     <a href="#about" id="hero-btn" class="btn">Discover More</a>
                     <a href="#products" class="btn secondary-btn">View Products</a>
@@ -78,7 +78,7 @@
             <div class="container content">
                 <div class="left">
                     <h6>Production • Team • Innovation</h6>
-                    <h2>ALISAR Deadsea<br><span>In Numbers</span></h2>
+                    <h2>ALISAR DeadSea<br><span>In Numbers</span></h2>
                 </div>
                 <div class="right">
                     <div class="row">
@@ -97,11 +97,11 @@
                     </div>
                     <div class="row">
                         <div class="counter-box">
-                            <h3 data-target="400">0</h3>
+                            <h3 data-target="200">0</h3>
                             <p>Unique Formulas</p>
                         </div>
                         <div class="counter-box">
-                            <h3 data-target="4000">0</h3>
+                            <h3 data-target="2000">0</h3>
                             <p>Production & Lab Area (m²)</p>
                         </div>
                     </div>
@@ -116,13 +116,15 @@
                         <h2>Your Brand<br><span>Private Label</span></h2>
                         <p class="subtitle">Share your vision. We bring it to life.</p>
                         <p>
-                            We specialize in private label skincare and cosmetic production. Leveraging our expertise in dermocosmetics,
-                             we create premium products for businesses looking to launch their own brand.
+                            We specialize in private label skincare and cosmetic production. Leveraging our expertise in
+                            dermocosmetics,
+                            we create premium products for businesses looking to launch their own brand.
                         </p>
                         <p>
-                            Our portfolio includes a wide range of facial, hair, and body care items, 
+                            Our portfolio includes a wide range of facial, hair, and body care items,
                             carefully crafted to meet the unique needs and preferences of each client.
-                             We ensure exceptional quality, adherence to industry standards, and innovative, effective formulations.
+                            We ensure exceptional quality, adherence to industry standards, and innovative, effective
+                            formulations.
                         </p>
                         <div class="buttons">
                             <a href="#quote" class="btn">Order a Quote</a>
@@ -152,9 +154,120 @@
                 </div>
             </div>
         </section>
+
+        <!-- IMPROVED Our Services Section with 6 cards in one row -->
+        <section id="our-services" class="our-services-section">
+            <div class="services-decoration decoration-1"></div>
+            <div class="services-decoration decoration-2"></div>
+
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">We offer comprehensive solutions for your skincare brand, from concept to
+                    delivery, with a focus on quality and innovation.</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <img src="image/Consultation.jpg" alt="Consultation & Formulation">
+                        <h3>Consultation & Formulation</h3>
+                        <p>Our experts work with you to develop custom formulations that align with your brand vision.
+                        </p>
+                        <a href="#consultation" class="service-link">
+                            Learn more <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <img src="image/Designing.jpg" alt="Designing & Registration">
+                        <h3>Designing & Registration</h3>
+                        <p>We handle packaging design and regulatory compliance to meet industry standards.</p>
+                        <a href="#design" class="service-link">
+                            Learn more <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="factory"></i>
+                        </div>
+                        <img src="image/Manufacturing.jpg" alt="Manufacturing">
+                        <h3>Manufacturing</h3>
+                        <p>State-of-the-art facilities ensure high-quality, consistent manufacturing.</p>
+                        <a href="#manufacturing" class="service-link">
+                            Learn more <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="package"></i>
+                        </div>
+                        <img src="image/Packaging.jpg" alt="Packaging">
+                        <h3>Packaging</h3>
+                        <p>Wide range of packaging options customized to reflect your brand identity.</p>
+                        <a href="#packaging" class="service-link">
+                            Learn more <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="test-tube"></i>
+                        </div>
+                        <img src="image/Testing.jpg" alt="Product Testing">
+                        <h3>Product Testing</h3>
+                        <p>Rigorous testing ensures product safety, efficacy, and compliance.</p>
+                        <a href="#testing" class="service-link">
+                            Learn more <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i data-lucide="truck"></i>
+                        </div>
+                        <img src="image/Delivery.jpg" alt="Delivery">
+                        <h3>Delivery</h3>
+                        <p>Efficient logistics ensure timely delivery of your products worldwide.</p>
+                        <a href="#delivery" class="service-link">
+                            Learn more <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+
+                </div>
+                <div class="services-cta">
+                    <a href="services.html" class="btn primary-btn">Explore Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alisar Brand Section -->
+        <section id="alisar-brand" class="alisar-brand-section fade-up-section">
+            <div class="container">
+                <h2 class="section-title">Alisar Brand</h2>
+                <p class="section-subtitle">Crafting luxurious skincare experiences with natural Dead Sea minerals and innovative formulations.</p>
+                <div class="brand-content">
+                    <div class="brand-image">
+                        <img src="image/brands.png" alt="Alisar Brand">
+                    </div>
+                    <div class="brand-text">
+                        <h3>Our Philosophy</h3>
+                        <p>At Alisar, we combine nature and science to create skincare products that deliver results.
+                            Our commitment is to quality, purity, and innovation in every formulation.</p>
+                        <a href="#services" class="btn">Explore Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 </body>
 
-
 </html>
-
