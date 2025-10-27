@@ -19,31 +19,49 @@
     <script src="https://cdn.tailwindcss.com" async></script>
     <script src="js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.253.0/dist/lucide.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-p1P3x4CKfG6+Vh0Ql2+hbGH9yJ3P6ey+VtJHbc0yq/5OqD7sV2n/5ev1X07Z2iDFh1XlMyl1ixq7y1RjDq4jVw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>A L I S A R<br></h1>
-                <span>Dead Sea • Products</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#our-services">Our Services</a></li>
-                <li><a href="#private-label">Private Label</a></li>
-                <li><a href="#brand">Alisar Brand</a></li>
-                <li><a href="#quality">Quality</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <h1>A L I S A R</h1>
+            <span>Dead Sea • Products</span>
+        </div>
+
+        <!-- Hamburger Menu (Mobile) -->
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Navbar Links -->
+        <ul class="nav-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#our-services">Our Services</a></li>
+            <li><a href="#private-label">Private Label</a></li>
+            <li><a href="#brand">Alisar Brand</a></li>
+            <li><a href="#quality">Quality</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
 
     <main>
         <section class="hero"
-            style="background: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('deadsea.jpg') center/cover no-repeat;">
+            style="background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.25)), url('deadsea.jpg') center/cover no-repeat;">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 id="hero-text">ALISAR, where the Dead Sea’s minerals meet luxurious skincare.</h1>
@@ -69,7 +87,7 @@
                         nourish,
                         protect, and rejuvenate the skin for everyday care.
                     </p>
-                    <a href="about.html" class="btn">Learn More About Alisar</a>
+                    <a href="about.html" class="btn">Learn More </a>
                 </div>
             </div>
         </section>
@@ -251,7 +269,8 @@
         <section id="alisar-brand" class="alisar-brand-section fade-up-section">
             <div class="container">
                 <h2 class="section-title">Alisar Brand</h2>
-                <p class="section-subtitle">Crafting luxurious skincare experiences with natural Dead Sea minerals and innovative formulations.</p>
+                <p class="section-subtitle">Crafting luxurious skincare experiences with natural Dead Sea minerals and
+                    innovative formulations.</p>
                 <div class="brand-content">
                     <div class="brand-image">
                         <img src="image/brands.png" alt="Alisar Brand">
@@ -265,6 +284,98 @@
                 </div>
             </div>
         </section>
+
+        <section id="contact-section" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Reach out to Alisar for Dead Sea Products. We're here to assist you with
+                    your skincare needs.</p>
+
+                <div class="contact-container">
+
+                    <!-- Left Box: Contact Info -->
+                    <div class="contact-box fade-in-section">
+                        <h3>Alisar For Dead Sea Products</h3>
+                        <p>57 Kenaz Ibn Al-Hussein - Sweileh, Amman 11012, Jordan</p>
+                        <p><strong>Phone:</strong> <a href="tel:+962795841357">+962 7 9584 1357</a></p>
+                        <p><strong>Email:</strong> <a
+                                href="mailto:info@alisardeadseaproducts.jo">info@alisardeadseaproducts.jo</a></p>
+                        <p><strong>Opening Hours:</strong> 8:00 AM - 5:00 PM</p>
+
+                        
+                    </div>
+
+                    <!-- Right Box: Map -->
+                    <div class="map-box fade-in-section">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.412890243502!2d35.83412497547249!3d32.03101377398429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c9f206e8cdb3d%3A0x2a33129d9684eb2f!2zQWxpc2FyIEZvciBEZWFkIFNlYSBQcm9kdWN0cyBDby4g2KfZhNmK2LPYp9ixINmE2YXYs9iq2K3Yttix2KfYqiDYp9mE2KjYrdixINin2YTZhdmK2Ko!5e0!3m2!1sen!2sjo!4v1761497650492!5m2!1sen!2sjo"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="contact-cta fade-in-section">
+                    <a href="#contact-section" class="btn primary-btn">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="footer-section">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>A L I S A R<br></h3>
+                    <span>Dead Sea • Products</span>
+
+                    <p>We create luxurious skincare products using natural Dead Sea minerals, blending nature and
+                        science for high-quality personal care solutions.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                        <a href="https://maps.app.goo.gl/1AWxnYiewu81hMth6" target="_blank"
+                            style="color:inherit; text-decoration:none;">
+                            57 Kenaz Ibn Al-Hussein, Sweileh, Amman 11012, Jordan
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:+962795841357" style="color:inherit; text-decoration:none;">Phone: +962 7 9584
+                            1357</a>
+                    </p>
+                    <p>
+                        <a href="mailto:info@alisardeadseaproducts.jo"
+                            style="color:inherit; text-decoration:none;">Email: info@alisardeadseaproducts.jo</a>
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/962795841357" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Alisar Dead Sea Products. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+
+
 
 
     </main>

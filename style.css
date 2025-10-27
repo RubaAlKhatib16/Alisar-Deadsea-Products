@@ -594,14 +594,6 @@ body {
     line-height: 1;
 }
 
-
-
-
-
-
-
-
-
 /* Our Services Section */
 :root {
     --primary-color: #6B5B95;
@@ -931,7 +923,7 @@ body {
     font-size: 36px;
     margin-bottom: var(--spacing-sm);
     color: var(--text-dark);
-    
+
 }
 
 .alisar-brand-section .section-subtitle {
@@ -940,7 +932,7 @@ body {
     max-width: 700px;
     margin: 0 auto var(--spacing-lg);
     line-height: 1.6;
-    
+
 }
 
 .alisar-brand-section .brand-content {
@@ -1007,165 +999,385 @@ body {
 }
 
 :root {
-            --primary-color: #6B5B95;
-            --secondary-color: #4B3C75;
-            --text-dark: #2E1A47;
-            --text-medium: #4a3d5f;
-            --text-light: #6B5B95;
-            --background-light: #f7f8fc;
-            --background-medium: #f9f9fb;
-            --background-gradient-start: #f0e4ff;
-            --background-gradient-end: #e6d0ff;
-            --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.08);
-            --border-radius-small: 5px;
-            --border-radius-medium: 10px;
-            --border-radius-large: 30px;
-            --spacing-xs: 8px;
-            --spacing-sm: 15px;
-            --spacing-md: 20px;
-            --spacing-lg: 30px;
-            --spacing-xl: 50px;
-            --spacing-xxl: 100px;
-        }
+    --primary-color: #6B5B95;
+    --secondary-color: #4B3C75;
+    --text-dark: #2E1A47;
+    --text-medium: #4a3d5f;
+    --text-light: #6B5B95;
+    --background-light: #f7f8fc;
+    --background-medium: #f9f9fb;
+    --background-gradient-start: #f0e4ff;
+    --background-gradient-end: #e6d0ff;
+    --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --border-radius-small: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 30px;
+    --spacing-xs: 8px;
+    --spacing-sm: 15px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 50px;
+    --spacing-xxl: 100px;
+}
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-        }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* Alisar Brand Section - MODIFIED */
-        .alisar-brand-section {
-            padding: var(--spacing-xxl) var(--spacing-md);
-            background: var(--background-light);
-            color: var(--text-dark);
-        }
+/* Alisar Brand Section - MODIFIED */
+.alisar-brand-section {
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background: var(--background-light);
+    color: var(--text-dark);
+}
 
-        .alisar-brand-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
+.alisar-brand-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
 
-        .alisar-brand-section .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-dark);
-            text-align: center;
-        }
+.alisar-brand-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    text-align: center;
+}
 
-        .alisar-brand-section .section-subtitle {
-            font-size: 15px;
-            color: var(--text-medium);
-            max-width: 700px;
-            margin: 0 auto var(--spacing-lg);
-            line-height: 1.6;
-            text-align: center;
-        }
+.alisar-brand-section .section-subtitle {
+    font-size: 15px;
+    color: var(--text-medium);
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    line-height: 1.6;
+    text-align: center;
+}
 
-        .alisar-brand-section .brand-content {
-            display: flex;
-            flex-direction: row-reverse; /* This will reverse the order - image on right */
-            gap: var(--spacing-xl);
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+.alisar-brand-section .brand-content {
+    display: flex;
+    flex-direction: row-reverse;
+    /* This will reverse the order - image on right */
+    gap: var(--spacing-xl);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-        .alisar-brand-section .brand-image {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-        }
+.alisar-brand-section .brand-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
 
-        .alisar-brand-section .brand-image img {
-            width: 100%;
-            border-radius: var(--border-radius-medium);
-            box-shadow: var(--shadow-light);
-        }
+.alisar-brand-section .brand-image img {
+    width: 100%;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-light);
+}
 
-        .alisar-brand-section .brand-text {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-        }
+.alisar-brand-section .brand-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
 
-        .alisar-brand-section .brand-text h3 {
-            font-size: 28px;
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-dark);
-            font-family: 'Playfair Display', serif;
-        }
+.alisar-brand-section .brand-text h3 {
+    font-size: 28px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    font-family: 'Playfair Display', serif;
+}
 
-        .alisar-brand-section .brand-text p {
-            font-size: 16px;
-            color: var(--text-medium);
-            line-height: 1.6;
-            margin-bottom: var(--spacing-md);
-        }
+.alisar-brand-section .brand-text p {
+    font-size: 16px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
 
-        .alisar-brand-section .brand-text .btn {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: var(--border-radius-medium);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: 2px solid var(--primary-color);
-        }
+.alisar-brand-section .brand-text .btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: var(--border-radius-medium);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+}
 
-        .alisar-brand-section .brand-text .btn:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-        }
+.alisar-brand-section .brand-text .btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
 
-        /* Animation */
-        .fade-up-section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
-        }
+/* Animation */
+.fade-up-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
 
-        .fade-up-section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.fade-up-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .alisar-brand-section .brand-content {
-                flex-direction: column;
-                text-align: center;
-            }
+/* Responsive */
+@media (max-width: 900px) {
+    .alisar-brand-section .brand-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            .alisar-brand-section .brand-text {
-                text-align: center;
-            }
-        }
+    .alisar-brand-section .brand-text {
+        text-align: center;
+    }
+}
 
-        @media (max-width: 768px) {
-            .alisar-brand-section {
-                padding: var(--spacing-xl) var(--spacing-md);
-            }
-            
-            .alisar-brand-section .section-title {
-                font-size: 32px;
-            }
-            
-            .alisar-brand-section .section-subtitle {
-                font-size: 14px;
-            }
-        }
+@media (max-width: 768px) {
+    .alisar-brand-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
 
-        @media (max-width: 480px) {
-            .alisar-brand-section .section-title {
-                font-size: 28px;
-            }
-            
-            .alisar-brand-section .brand-text h3 {
-                font-size: 24px;
-            }
-        }
+    .alisar-brand-section .section-title {
+        font-size: 32px;
+    }
+
+    .alisar-brand-section .section-subtitle {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .alisar-brand-section .section-title {
+        font-size: 28px;
+    }
+
+    .alisar-brand-section .brand-text h3 {
+        font-size: 24px;
+    }
+}
+
+/* Contact Section - Creative Style */
+.contact-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f6f6fd, #e0e0f0);
+}
+
+.contact-section .section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #2E1A47;
+}
+
+.contact-section .section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #4a3d5f;
+}
+
+.contact-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-box, .map-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex: 1 1 400px;
+}
+
+.contact-box h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #6B5B95;
+}
+
+.contact-box p {
+    margin-bottom: 10px;
+    color: #4a3d5f;
+}
+
+.footer-social {
+    margin-top: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #4B3C75;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.2);
+    color: #3a3a6a;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* CTA Button */
+.contact-cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Fade-in Animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+
+/* FOOTER STYLES */
+  .footer-section {
+    background-color: #2b1e3a;
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 250px;
+  }
+
+  .footer-about h3{
+    font-family: 'playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #6B5B95, #B8A1D9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 4px;
+  }
+  .footer-about span{
+     display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .footer-links h4,
+  .footer-contact h4 {
+    margin-bottom: 15px;
+    color: #F5CBA7;
+  }
+
+  .footer-about p {
+    line-height: 1.6;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links ul li a:hover {
+    color: #F5CBA7;
+  }
+
+  .footer-contact p {
+    margin-bottom: 10px;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    transform: scale(1.2);
+    color: #F5CBA7;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+
+  @media(max-width: 768px){
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .footer-social a {
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
