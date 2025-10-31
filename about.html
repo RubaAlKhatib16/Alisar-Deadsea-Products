@@ -1,295 +1,1299 @@
-<<<<<<< HEAD
-<section class="our-story">
-  <h2>Our Story</h2>
-  <div class="timeline">
-    <div class="timeline-item fade-in">
-      <span class="year">2009</span>
-      <p>Founding of ALISAR Dead Sea Products. Launch of the first skincare line.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2010</span>
-      <p>Introducing new natural cosmetics products inspired by Dead Sea minerals.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2012</span>
-      <p>Expansion of product range and gaining first international customers.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2016</span>
-      <p>Implemented ISO standards for high-quality skincare production.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2017</span>
-      <p>Building our own factory. First production starts in July.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2019</span>
-      <p>Celebrating ALISAR’s 10th anniversary.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2023</span>
-      <p>Launching a new skincare brand “ALISAR Body & Hair” and new testing projects.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2024</span>
-      <p>15 years together – celebrating the 15th anniversary of ALISAR.</p>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
 
-<style>
-.our-story {
-  padding: 80px 20px;
-  background-color: #f7f8fc;
-  text-align: center;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Alisar Dead Sea Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-pO1b7XZs5/UqM6x8w4aWQj5dJ1sZed45o/Xg1oYx3rM+WfNf/OS5z3zM71y1F8+qSvjKwjlz8lL8X6ShkYZh3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-.our-story h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #2E1A47;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6B5B95;
+            --secondary-color: #4B3C75;
+            --text-dark: #2E1A47;
+            --text-medium: #4a3d5f;
+            --text-light: #6B5B95;
+            --background-light: #f7f8fc;
+            --background-medium: #f9f9fb;
+            --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-left: 20px;
-}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
 
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background-color: #6B5B95;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -2px;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-.timeline-item {
-  padding: 20px 40px;
-  position: relative;
-  width: 50%;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: var(--background-light);
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.timeline-item:nth-child(odd) {
-  left: 0;
-  text-align: right;
-}
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #6B5B95, #B8A1D9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            margin: 0;
+        }
 
-.timeline-item:nth-child(even) {
-  left: 50%;
-}
+        .logo span {
+            font-size: 12px;
+            color: var(--text-light);
+            letter-spacing: 2px;
+        }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: -10px;
-  background-color: #6B5B95;
-  border: 4px solid #fff;
-  top: 20px;
-  border-radius: 50%;
-  z-index: 1;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
 
-.timeline-item:nth-child(even)::before {
-  left: -10px;
-}
+        .nav-links a {
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-.timeline-item .year {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #2E1A47;
-  display: block;
-  margin-bottom: 10px;
-}
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-.timeline-item p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  color: #4a3d5f;
-  margin: 0;
-}
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            text-align: center;
+            background: url('aboutt.png') center/cover no-repeat;
+        }
 
-.timeline-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.8);
+        }
 
-<script>
-const timelineItems = document.querySelectorAll('.timeline-item');
+        .hero-text {
+            position: relative;
+            z-index: 1;
+        }
 
-function checkTimeline() {
-  const triggerBottom = window.innerHeight * 0.85;
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
 
-  timelineItems.forEach(item => {
-    const itemTop = item.getBoundingClientRect().top;
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-medium);
+        }
 
-    if(itemTop < triggerBottom) {
-      item.classList.add('show');
-    }
-  });
-}
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-window.addEventListener('scroll', checkTimeline);
-checkTimeline(); // للتأكد من إظهار العناصر عند التحميل إذا كانت بالعرض
-</script>
-=======
-<section class="our-story">
-  <h2>Our Story</h2>
-  <div class="timeline">
-    <div class="timeline-item fade-in">
-      <span class="year">2009</span>
-      <p>Founding of ALISAR Dead Sea Products. Launch of the first skincare line.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2010</span>
-      <p>Introducing new natural cosmetics products inspired by Dead Sea minerals.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2012</span>
-      <p>Expansion of product range and gaining first international customers.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2016</span>
-      <p>Implemented ISO standards for high-quality skincare production.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2017</span>
-      <p>Building our own factory. First production starts in July.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2019</span>
-      <p>Celebrating ALISAR’s 10th anniversary.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2023</span>
-      <p>Launching a new skincare brand “ALISAR Body & Hair” and new testing projects.</p>
-    </div>
-    <div class="timeline-item fade-in">
-      <span class="year">2024</span>
-      <p>15 years together – celebrating the 15th anniversary of ALISAR.</p>
-    </div>
-  </div>
-</section>
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-<style>
-.our-story {
-  padding: 80px 20px;
-  background-color: #f7f8fc;
-  text-align: center;
-}
+        p {
+            margin-bottom: 20px;
+        }
 
-.our-story h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #2E1A47;
-}
+        /* Factory Info */
+        .factory-info {
+            background-color: var(--background-medium);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
 
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-left: 20px;
-}
+        .factory-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
 
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background-color: #6B5B95;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -2px;
-}
+        .factory-info p {
+            margin-bottom: 10px;
+        }
 
-.timeline-item {
-  padding: 20px 40px;
-  position: relative;
-  width: 50%;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
+        /* Discover Section Layout */
+        .discover-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
 
-.timeline-item:nth-child(odd) {
-  left: 0;
-  text-align: right;
-}
+        .discover-text {
+            flex: 1.2;
+        }
 
-.timeline-item:nth-child(even) {
-  left: 50%;
-}
+        .discover-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: -10px;
-  background-color: #6B5B95;
-  border: 4px solid #fff;
-  top: 20px;
-  border-radius: 50%;
-  z-index: 1;
-}
+        .discover-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: .4s ease;
+        }
 
-.timeline-item:nth-child(even)::before {
-  left: -10px;
-}
+        .discover-image img:hover {
+            transform: scale(1.03);
+        }
 
-.timeline-item .year {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #2E1A47;
-  display: block;
-  margin-bottom: 10px;
-}
+        @media (max-width: 768px) {
+            .discover-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
 
-.timeline-item p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  color: #4a3d5f;
-  margin: 0;
-}
+            .discover-image img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
 
-.timeline-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
 
-<script>
-const timelineItems = document.querySelectorAll('.timeline-item');
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+            padding: 0;
+        }
 
-function checkTimeline() {
-  const triggerBottom = window.innerHeight * 0.85;
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-  timelineItems.forEach(item => {
-    const itemTop = item.getBoundingClientRect().top;
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.7s ease;
+        }
 
-    if(itemTop < triggerBottom) {
-      item.classList.add('show');
-    }
-  });
-}
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
 
-window.addEventListener('scroll', checkTimeline);
-checkTimeline(); // للتأكد من إظهار العناصر عند التحميل إذا كانت بالعرض
-</script>
->>>>>>> 980e921d6bd2bcbc3f517fd94f628e5df1e70aa4
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -9px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -9px;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item .year {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-dark);
+        }
+
+        /* Two columns (Mission & Vision) */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .two-columns div {
+            flex: 1 1 300px;
+            background: var(--background-medium);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+
+        /* Team */
+        .member-socials a img {
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .member-socials a img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+            /* يضيف تأثير لامع عند hover */
+        }
+
+
+        .team-container {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            flex: 0 0 300px;
+            /* Fixed width for image container */
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            display: block;
+        }
+
+        .member-details {
+            flex: 1;
+        }
+
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            /* المسافة بين الاسم والأيقونة */
+        }
+
+        .linkedin-icon img {
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .linkedin-icon img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        .team-member h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .member-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: block;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .member-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .member-bio {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-medium);
+            text-align: justify;
+        }
+
+        /* Alternating Layout (Reverse) */
+        .team-member.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .team-member.reverse .member-title {
+            padding-left: 0;
+            padding-right: 15px;
+            text-align: right;
+        }
+
+        .team-member.reverse .member-title::before {
+            left: auto;
+            right: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+
+            .team-member,
+            .team-member.reverse {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .member-image {
+                flex: 0 0 auto;
+                width: 70%;
+                margin-bottom: 20px;
+            }
+
+            .team-member.reverse .member-title {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .team-member.reverse .member-title::before {
+                display: none;
+            }
+
+            .member-title {
+                padding-left: 0;
+            }
+
+            .member-title::before {
+                display: none;
+            }
+
+            .member-bio {
+                text-align: center;
+            }
+        }
+
+        #values {
+            background-color: #f9f9fb;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #values h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            margin-bottom: 50px;
+            color: #2E1A47;
+        }
+
+        .values-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .values-list li {
+            font-size: 18px;
+            color: #4a3d5f;
+            text-align: left;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 25px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .values-list li span {
+            width: 12px;
+            height: 12px;
+            background-color: #6B5B95;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 6px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--background-light);
+            color: var(--text-medium);
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 60px;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+        }
+
+        /* Dropdown Styles */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-list {
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            min-width: 200px;
+            border-radius: 8px;
+            z-index: 10;
+        }
+
+        .dropdown-list li {
+            padding: 10px 20px;
+        }
+
+        .dropdown-list li a {
+            color: #2E1A47;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .dropdown-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .dropdown:hover .dropdown-list {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #values .values-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        #values .values-list li {
+            flex: 1 1 250px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 18px;
+            color: #4a3d5f;
+            position: relative;
+            padding-left: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #values .values-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        #values .values-list li span {
+            width: 12px;
+            height: 12px;
+            background-color: #6B5B95;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+        /* FOOTER STYLES */
+        .footer-section {
+            background-color: #2b1e3a;
+            color: #ffffff;
+            padding: 60px 20px 20px 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+            flex: 1 1 250px;
+        }
+
+        .footer-about h3 {
+            font-family: 'playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #6B5B95, #B8A1D9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 4px;
+        }
+
+        .footer-about span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            margin-bottom: 15px;
+            color: #F5CBA7;
+        }
+
+        .footer-about p {
+            line-height: 1.6;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #F5CBA7;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            transform: scale(1.2);
+            color: #F5CBA7;
+        }
+
+        /* Footer Animation */
+        .footer-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .footer-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        @media(max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-social a {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+
+        section,
+        .team-member,
+        .two-columns div,
+        .values-list li,
+        h2 {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease-out;
+        }
+
+        section.show,
+        .team-member.show,
+        .two-columns div.show,
+        .values-list li.show,
+        h2.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-member img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member img:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .dropdown-list {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-list,
+        .dropdown-list.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .logo a {
+            display: block;
+            /* ليغطي كل النصوص */
+            text-decoration: none;
+            /* إزالة الخط تحت النص */
+            color: inherit;
+            /* يحافظ على لون النص */
+            cursor: pointer;
+            /* يظهر يد عند المرور */
+        }
+
+        .hero-subtitle {
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            color: #fff;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .animated-word {
+            color: #5a0a7f;
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+            animation: wave 2s infinite;
+        }
+
+        /* حركة تصاعدية للكلمات المهمة */
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .factory-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background-color: var(--background-medium);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px 20px;
+            border-radius: 8px;
+        }
+
+        .info-content {
+            flex: 2;
+        }
+
+        .info-image {
+            flex: 1;
+            display: flex;
+            justify-content: right;
+        }
+
+        .info-image img {
+            width: 450px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .factory-info {
+                flex-direction: column;
+            }
+
+            .info-image img {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <h1>A L I S A R</h1>
+                    <span>Dead Sea Products</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Navbar Links -->
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#about">About Us &#9662;</a>
+                    <ul class="dropdown-list">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#our-story">Our Story</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#mission-vision">Our Mission & Vision</a></li>
+                        <li><a href="#values">Our Values</a></li>
+                    </ul>
+                </li>
+                <li><a href="#our-services">Our Services</a></li>
+                <li><a href="#private-label">Private Label</a></li>
+                <li><a href="#brand">Alisar Brand</a></li>
+                <li><a href="#quality">Quality</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="logo">
+                <h1>A B O U T US</h1>
+            </div>
+            <p class="hero-subtitle">
+                Discover the <span class="animated-word">essence of nature</span> and <span
+                    class="animated-word">innovation</span> with <strong>Alisar Dead Sea Products</strong>.
+            </p>
+
+
+        </div>
+
+    </section>
+
+    <!-- Discover -->
+
+    <section class="about-section" id="discover">
+
+        <div class="factory-wrapper">
+
+            <div class="discover-text">
+                <h2>Discover Alisar Dead Sea Products Factory</h2>
+                <p><strong>Alisar for Dead Sea Products</strong> was established in <strong>2009</strong> as a private
+                    limited
+                    liability company.
+                    The company’s main activity focuses on high-quality skincare and cosmetic products derived from Dead
+                    Sea
+                    minerals.</p>
+
+                <p>The <strong>Board of Directors</strong> are major investors with vast experience in the Dead Sea
+                    products
+                    industry, ensuring growth and international recognition.</p>
+
+                <div class="factory-info">
+                    <div class="info-content">
+                        <h3>Factory Information</h3>
+                        <p><strong>Head Office:</strong> Amman, Jordan</p>
+                        <p><strong>Factory:</strong> Sweileh – Old Jarash Street, Amman, Jordan</p>
+                        <p><strong>Tel:</strong> +962 7 9584 1357</p>
+                        <p><strong>Email:</strong> <a href="mailto:info@naturallush.com">info@naturallush.com</a></p>
+                        <p><strong>Website:</strong> <a href="#" target="_blank">www.seacareshop.com</a></p>
+                        <p><strong>Contact Person:</strong> The General Manager, Mr. Atef Idais</p>
+                    </div>
+
+                    <div class="info-image">
+                        <img src="factory.png" alt="Alisar Factory">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Our Story -->
+    <section class="our-story" id="our-story">
+        <h2>Our Story</h2>
+        <div class="timeline">
+            <div class="timeline-item"><span class="year">2009</span>
+                <p>Founding of ALISAR Dead Sea Products. Launch of the first skincare line.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2010</span>
+                <p>Introducing new natural cosmetics products inspired by Dead Sea minerals.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2012</span>
+                <p>Expansion of product range and gaining first international customers.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2016</span>
+                <p>Implemented ISO standards for high-quality skincare production.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2017</span>
+                <p>Building our own factory. First production starts in July.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2019</span>
+                <p>Celebrating ALISAR’s 10th anniversary.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2023</span>
+                <p>Launching a new skincare brand “ALISAR Body & Hair” and new testing projects.</p>
+            </div>
+            <div class="timeline-item"><span class="year">2024</span>
+                <p>15 years together – celebrating the 15th anniversary of ALISAR.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="about-section" id="mission">
+        <h2>Our Mission & Vision</h2>
+        <div class="two-columns">
+            <div>
+                <h3>Our Mission</h3>
+                <p>To create authentic Dead Sea skincare products that combine nature’s power with modern science —
+                    safe, effective, and luxurious beauty experiences.</p>
+            </div>
+            <div>
+                <h3>Our Vision</h3>
+                <p>To be recognized globally as a leader in Dead Sea skincare, delivering innovation, quality, and trust
+                    to every customer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="team-container">
+            <!-- Member 1 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="images/team1.jpg" alt="Mr. Atef Idais, Founder & CEO">
+                </div>
+                <div class="member-details">
+                    <h3>
+                        Mr. Atef Idais
+                        <a href="https://www.linkedin.com/in/atef-idais" target="_blank" class="linkedin-icon">
+                            <img src="linkedin.webp" alt="LinkedIn" width="20" height="20">
+                        </a>
+                    </h3>
+                    <p class="member-title">Founder & CEO</p>
+                    <p class="member-bio">
+                        Mr. Atef Idais is the founder and guiding force behind Alisar, bringing over 15 years of
+                        experience in the Dead Sea products industry. With a vision to combine traditional natural
+                        remedies with modern cosmetic science, he ensures that every product is safe, effective, and of
+                        high quality. His dedication to sustainability and excellence reflects in all aspects of
+                        Alisar’s offerings, making the brand trusted and respected by customers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Member 2 (reverse layout) -->
+            <div class="team-member reverse">
+                <div class="member-image">
+                    <img src="images/team3.jpg" alt="Eng.Rose Al-Maaitah, Quality Manager">
+                </div>
+                <div class="member-details">
+                    <h3>
+                        Eng.Rose Al-Maaitah
+                        <a href="https://www.linkedin.com/in/rose-almaaitah" target="_blank" class="linkedin-icon">
+                            <img src="linkedin.webp" alt="LinkedIn" width="20" height="20">
+                        </a>
+                    </h3>
+                    <p class="member-title">Quality Manager</p>
+                    <p class="member-bio">
+                        Eng.Rose Al-Maaitah stands at the forefront of Alisar’s pursuit of excellence, embodying
+                        precision, dedication, and an unwavering commitment to quality. As the driving force behind the
+                        Quality Assurance department, she meticulously oversees every stage of production, from the
+                        careful inspection of raw materials to the rigorous testing of finished products. Her leadership
+                        ensures that all Alisar offerings not only comply with, but often surpass, international ISO and
+                        GMP standards, guaranteeing the highest level of safety, efficacy, and customer satisfaction.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="images/team2.jpg" alt="Omar Alhadidi, Maintenance Manager">
+                </div>
+                <div class="member-details">
+                    <h3>
+                        Omar Alhadidi
+                        <a href="https://www.linkedin.com/in/omar-alhadidi" target="_blank" class="linkedin-icon">
+                            <img src="linkedin.webp" alt="LinkedIn" width="20" height="20">
+                        </a>
+                    </h3>
+                    <p class="member-title">Maintenance Manager</p>
+                    <p class="member-bio">
+                        Eng.Omar is responsible for overseeing all maintenance and operational processes at Alisar,
+                        ensuring smooth production and optimal performance of equipment. With his expertise in chemical
+                        engineering, he ensures that every system runs efficiently, safely, and in full compliance with
+                        international standards, supporting the consistent quality of Alisar’s products.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Values -->
+    <section class="about-section" id="values">
+        <h2>Our Values</h2>
+        <ul class="values-list">
+            <li class="fade-up"><span></span> <strong>Quality:</strong> Highest manufacturing standards for exceptional
+                products.</li>
+            <li class="fade-up"><span></span> <strong>Innovation:</strong> Continuously evolving formulations to meet
+                modern needs.</li>
+            <li class="fade-up"><span></span> <strong>Sustainability:</strong> Eco-friendly sourcing and responsible
+                production.</li>
+            <li class="fade-up"><span></span> <strong>Trust:</strong> Building long-term relationships through honesty
+                and transparency.</li>
+            <li class="fade-up"><span></span> <strong>Excellence:</strong> Every detail reflects our pursuit of
+                perfection.</li>
+        </ul>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>A L I S A R<br></h3>
+                <span>Dead Sea Products</span>
+
+                <p>We create luxurious skincare products using natural Dead Sea minerals, blending nature and
+                    science for high-quality personal care solutions.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>
+                    <a href="https://maps.app.goo.gl/1AWxnYiewu81hMth6" target="_blank"
+                        style="color:inherit; text-decoration:none;">
+                        57 Kenaz Ibn Al-Hussein, Sweileh, Amman 11012, Jordan
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+962795841357" style="color:inherit; text-decoration:none;">Phone: +962 7 9584
+                        1357</a>
+                </p>
+                <p>
+                    <a href="mailto:info@alisardeadseaproducts.jo" style="color:inherit; text-decoration:none;">Email:
+                        info@alisardeadseaproducts.jo</a>
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/962795841357" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alisar Dead Sea Products. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Timeline fade-in
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('show');
+            });
+        }, { threshold: 0.2 });
+        timelineItems.forEach(item => observer.observe(item));
+
+        // Smooth scroll
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+            });
+        });
+
+        const dropdown = document.querySelector('.dropdown > a');
+        dropdown.addEventListener('click', e => {
+            if (window.innerWidth < 768) { // mobile
+                e.preventDefault();
+                const list = dropdown.nextElementSibling;
+                list.style.display = list.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+
+        // حركة fade-up عند التمرير
+        const fadeItems = document.querySelectorAll('.fade-up');
+
+        const observers = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeItems.forEach(item => observer.observe(item));
+
+        // Animate sections on scroll
+        const scrollElements = document.querySelectorAll('section, .value-card, .team-member, h2');
+
+        const scrollObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        scrollElements.forEach(el => scrollObserver.observe(el));
+
+        const mobileDropdown = document.querySelector('.dropdown > a');
+        mobileDropdown.addEventListener('click', e => {
+            if (window.innerWidth < 768) {
+                e.preventDefault();
+                const list = mobileDropdown.nextElementSibling;
+                list.classList.toggle('show');
+            }
+        });
+
+        const valueCards = document.querySelectorAll('.value-card');
+
+        const valueObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        valueCards.forEach(card => valueObserver.observe(card));
+
+        const valuesItems = document.querySelectorAll('.values-list li');
+
+        const observerValues = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        valuesItems.forEach(item => observerValues.observe(item));
+
+    </script>
+    <script>
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            // Check if the element is in the viewport, with a slight offset (e.g., 100px)
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) - 100 &&
+                rect.bottom >= 100
+            );
+        }
+
+        // Function to handle the scroll event
+        function handleScrollAnimation() {
+            // Select all elements that have the initial animation styles
+            const animatedElements = document.querySelectorAll('section, .timeline-item, .team-member, .two-columns div, .values-list li, h2, .footer-section');
+
+            animatedElements.forEach(el => {
+                // Check if the element is already visible
+                if (el.classList.contains('show')) {
+                    return;
+                }
+
+                // Check if the element is in the viewport
+                if (isElementInViewport(el)) {
+                    el.classList.add('show');
+                }
+            });
+        }
+
+        // Initial check and set up event listener
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation); // Run on load to show elements already in view
+
+        // Run the function once on load to catch elements already in the viewport
+        handleScrollAnimation();
+
+    </script>
+</body>
+
+</html>

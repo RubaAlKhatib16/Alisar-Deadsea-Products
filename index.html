@@ -19,42 +19,125 @@
     <script src="https://cdn.tailwindcss.com" async></script>
     <script src="js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.253.0/dist/lucide.min.js"></script>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-p1P3x4CKfG6+Vh0Ql2+hbGH9yJ3P6ey+VtJHbc0yq/5OqD7sV2n/5ev1X07Z2iDFh1XlMyl1ixq7y1RjDq4jVw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 </head>
+<style>
+    /* Dropdown Styles */
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-list {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        min-width: 200px;
+        border-radius: 8px;
+        z-index: 10;
+    }
+
+    .dropdown-list li {
+        padding: 10px 20px;
+    }
+
+    .dropdown-list li a {
+        color: #2E1A47;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .dropdown-list li a:hover {
+        color: var(--primary-color);
+    }
+
+    .dropdown:hover .dropdown-list {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .logo a {
+        display: block;
+        /* ليغطي كل النصوص */
+        text-decoration: none;
+        /* إزالة الخط تحت النص */
+        color: inherit;
+        /* يحافظ على لون النص */
+        cursor: pointer;
+        /* يظهر يد عند المرور */
+    }
+</style>
 
 <body>
     <header>
-    <nav class="navbar">
-        <!-- Logo -->
-        <div class="logo">
-            <h1>A L I S A R</h1>
-            <span>Dead Sea • Products</span>
-        </div>
+        <nav class="navbar">
+            <!-- Logo -->
 
-        <!-- Hamburger Menu (Mobile) -->
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+            <div class="logo">
+                <a href="index.html">
+                    <h1>A L I S A R</h1>
+                    <span>Dead Sea Products</span>
+                </a>
+            </div>
 
-        <!-- Navbar Links -->
-        <ul class="nav-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#our-services">Our Services</a></li>
-            <li><a href="#private-label">Private Label</a></li>
-            <li><a href="#brand">Alisar Brand</a></li>
-            <li><a href="#quality">Quality</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-        </ul>
-    </nav>
-</header>
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Navbar Links -->
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#about">About Us &#9662;</a> <!-- السهم الصغير ▼ -->
+                    <ul class="dropdown-list">
+                        <li><a href="about.html #about">About Us</a></li>
+                        <li><a href="about.html #our-story">Our Story</a></li>
+                        <li><a href="about.html #team">Our Team</a></li>
+                        <li><a href="about.html #mission-vision">Our Mission & Vision</a></li>
+                        <li><a href="about.html #values">Our Values</a></li>
+                    </ul>
+                </li>
+                <li><a href="#our-services">Our Services</a></li>
+                <li><a href="#private-label">Private Label</a></li>
+                <li><a href="#brand">Alisar Brand</a></li>
+                <li><a href="#quality">Quality</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
 
@@ -302,7 +385,7 @@
                                 href="mailto:info@alisardeadseaproducts.jo">info@alisardeadseaproducts.jo</a></p>
                         <p><strong>Opening Hours:</strong> 8:00 AM - 5:00 PM</p>
 
-                        
+
                     </div>
 
                     <!-- Right Box: Map -->
@@ -326,7 +409,7 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <h3>A L I S A R<br></h3>
-                    <span>Dead Sea • Products</span>
+                    <span>Dead Sea Products</span>
 
                     <p>We create luxurious skincare products using natural Dead Sea minerals, blending nature and
                         science for high-quality personal care solutions.</p>
@@ -380,5 +463,16 @@
 
     </main>
 </body>
+<script>
+    // Optional: Mobile Toggle for Dropdown
+    const dropdown = document.querySelector('.dropdown > a');
+    dropdown.addEventListener('click', e => {
+        if (window.innerWidth < 768) { // mobile
+            e.preventDefault();
+            const list = dropdown.nextElementSibling;
+            list.style.display = list.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+</script>
 
 </html>
