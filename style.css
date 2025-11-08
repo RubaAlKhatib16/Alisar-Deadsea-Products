@@ -33,6 +33,7 @@ body {
     padding: var(--spacing-md) 60px;
     background-color: var(--background-light);
     box-shadow: var(--shadow-light);
+    position: relative; /* Added for mobile menu positioning */
 }
 
 /* Logo */
@@ -71,6 +72,37 @@ body {
     margin: 0;
     padding: 0;
     /* Added to remove default ul padding */
+}
+
+/* Dropdown styling for mobile */
+.nav-links .dropdown-list {
+    position: static; /* Change from absolute to static for mobile flow */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 5px;
+    border-radius: 0;
+    display: none; /* Hidden by default */
+}
+
+.nav-links .dropdown-list li {
+    padding: 5px 0 5px 20px !important; /* Indent dropdown items */
+    border-bottom: none;
+}
+
+.nav-links .dropdown-list li a {
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+.nav-links .dropdown-list li a:hover {
+    background: none;
+    color: var(--primary-color);
+}
+
+/* Show dropdown when parent is active (mobile) */
+.nav-links .dropdown.active .dropdown-list {
+    display: block;
 }
 
 .nav-links a {
@@ -482,17 +514,86 @@ body {
 }
 
 /* General Responsive Adjustments */
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animation for 'X' */
+.nav-active .hamburger div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.nav-active .hamburger div:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-active .hamburger div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: var(--spacing-sm) var(--spacing-md);
+        /* Remove flex-direction: column and gap for mobile layout */
+    }
+
+    /* Show hamburger and hide nav-links by default on mobile */
+    .hamburger {
+        display: flex; /* Changed from block to flex to ensure it's visible and centered if needed */
         flex-direction: column;
-        gap: var(--spacing-sm);
+        justify-content: space-around;
+        height: 25px; /* Adjust height for better look */
     }
 
     .nav-links {
+        position: absolute;
+        top: 100%; /* Position below the navbar */
+        left: 0;
+        width: 100%;
+        height: 0; /* Start hidden */
+        overflow: hidden;
         flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-xs);
+        align-items: flex-start; /* Align links to the left */
+        gap: 0; /* Links will use padding/margin for spacing */
+        background-color: var(--background-light);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: height 0.3s ease-in-out;
+        z-index: 99;
+    }
+
+    /* Style individual list items for mobile */
+    .nav-links li {
+        width: 100%;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    /* Active state for mobile menu */
+    .nav-active .nav-links {
+        height: auto; /* Will be set dynamically by JS to fit content */
+        max-height: 500px; /* A large enough value for transition */
     }
 
     .hero h1 {
@@ -1261,122 +1362,118 @@ body {
 
 
 
-/* FOOTER STYLES */
-  .footer-section {
-    background-color: #2b1e3a;
-    color: #ffffff;
-    padding: 60px 20px 20px 20px;
-    font-family: 'Arial', sans-serif;
-  }
-
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .footer-about,
-  .footer-links,
-  .footer-contact {
-    flex: 1 1 250px;
-  }
-
-  .footer-about h3{
-    font-family: 'playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #6B5B95, #B8A1D9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 4px;
-  }
-  .footer-about span{
-     display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--text-light);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
-  .footer-links h4,
-  .footer-contact h4 {
-    margin-bottom: 15px;
-    color: #F5CBA7;
-  }
-
-  .footer-about p {
-    line-height: 1.6;
-  }
-
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-links ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-links ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .footer-links ul li a:hover {
-    color: #F5CBA7;
-  }
-
-  .footer-contact p {
-    margin-bottom: 10px;
-  }
-
-  .footer-social a {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 1.5rem;
-    color: #ffffff;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .footer-social a:hover {
-    transform: scale(1.2);
-    color: #F5CBA7;
-  }
-
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #ccc;
-  }
-
-  @media(max-width: 768px){
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 30px;
-    }
-
-    .footer-social a {
-      margin-right: 10px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .nav-links a {
-        font-size: 14px;
-    }
-    .hero h1 {
-        font-size: 28px;
-    }
+/* FOOTER */
+.footer-section {
+  background-color: #2E1A47;
+  color: #ffffff;
+  padding: 70px 40px;
+  font-family: 'Poppins', sans-serif;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1 1 280px;
+}
+
+/* Logo Title */
+.footer-about h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #B8A1D9, #6B5B95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 5px;
+}
+
+.footer-about span {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: #B8A1D9;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-about p {
+  line-height: 1.7;
+  color: #EDE6F7;
+}
+
+/* Section Titles */
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #B8A1D9;
+}
+
+/* Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #B8A1D9;
+}
+
+/* Contact */
+.footer-contact p,
+.footer-contact a {
+  color: #EDE6F7;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Social Icons */
+.footer-social a {
+  margin-right: 12px;
+  font-size: 22px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #B8A1D9;
+  transform: scale(1.15);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #4A3D5F;
+  color: #CFC9DD;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .footer-container {
+    text-align: center;
+    gap: 45px;
+  }
+}

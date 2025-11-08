@@ -19,12 +19,9 @@
     <script src="https://cdn.tailwindcss.com" async></script>
     <script src="js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.253.0/dist/lucide.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-p1P3x4CKfG6+Vh0Ql2+hbGH9yJ3P6ey+VtJHbc0yq/5OqD7sV2n/5ev1X07Z2iDFh1XlMyl1ixq7y1RjDq4jVw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
 </head>
 <style>
     /* Dropdown Styles */
@@ -88,39 +85,259 @@
 
     .logo a {
         display: block;
-        /* ليغطي كل النصوص */
+       
         text-decoration: none;
-        /* إزالة الخط تحت النص */
+    
         color: inherit;
-        /* يحافظ على لون النص */
+        
         cursor: pointer;
-        /* يظهر يد عند المرور */
+        
     }
+
+        /* ===============================
+   NAVBAR (CLEAN & RESPONSIVE)
+=============================== */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 60px;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .logo h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        font-weight: 700;
+        background: linear-gradient(90deg, #6B5B95, #B8A1D9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        letter-spacing: 3px;
+    }
+
+    .logo span {
+        font-size: 12px;
+        color: var(--text-light);
+        letter-spacing: 2px;
+    }
+
+    /* Links */
+    .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: .3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color);
+    }
+
+    /* Dropdown */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-list {
+        display: none;
+        position: absolute;
+        background: #fff;
+        padding: 10px 0;
+        top: 110%;
+        left: 0;
+        min-width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-list li {
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .dropdown-list li a:hover {
+        color: var(--primary-color);
+    }
+
+    .dropdown:hover .dropdown-list {
+        display: block;
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 28px;
+        height: 3px;
+        background-color: var(--text-dark);
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+
+        .hamburger {
+            display: flex;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            width: 100%;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 15px 15px;
+            z-index: 999;
+            text-align: center;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .dropdown-list {
+            position: static;
+            box-shadow: none;
+            background: transparent;
+            text-align: center;
+        }
+    }
+
+    /* Hamburger Animation */
+    .hamburger.open div:nth-child(1) {
+        transform: rotate(45deg) translateY(7px);
+    }
+
+    .hamburger.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open div:nth-child(3) {
+        transform: rotate(-45deg) translateY(-7px);
+    }
+
+
+    /* --- FIX DROPDOWN STYLE (remove bullets + spacing + smooth look) --- */
+
+/* إزالة النقاط */
+.dropdown-list,
+.dropdown-list li {
+    list-style: none !important;
+}
+
+/* تحسين الباكجراوند + الحواف */
+.dropdown-list {
+    padding: 8px 0 !important;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* ضبط خلايا القائمة */
+.dropdown-list li {
+    padding: 10px 20px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* إزالة آخر خط */
+.dropdown-list li:last-child {
+    border-bottom: none;
+}
+
+/* تنسيق الروابط */
+.dropdown-list li a {
+    display: block;
+    color: var(--text-dark);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* hover ناعم */
+.dropdown-list li a:hover {
+    color: var(--primary-color);
+    background: rgba(107, 91, 149, 0.07);
+    border-radius: 6px;
+}
+
+/* ↓↓↓↓ حل المسافة الزايدة تحت الـ navbar ↓↓↓↓ */
+.navbar {
+    margin-bottom: 0 !important;
+    padding-bottom: 10px !important;
+}
+
+/* ↓↓↓↓ ضبط مكان الدروب داون بالضبط تحت العنوان ↓↓↓↓ */
+.dropdown-list {
+    top: 100%;
+    left: 0;
+}
+/* يشيل أي خط تحت الروابط بالNavbar والدروب داون */
+.nav-links a,
+.dropdown-list li a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* حتى ما يظهر خط وقت hover */
+.nav-links a:hover,
+.dropdown-list li a:hover {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+.nav-links a:focus,
+.nav-links a:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
 </style>
 
 <body>
     <header>
         <nav class="navbar">
             <!-- Logo -->
-
             <div class="logo">
                 <a href="index.html">
                     <h1>A L I S A R</h1>
                     <span>Dead Sea Products</span>
                 </a>
             </div>
-
             <!-- Hamburger Menu (Mobile) -->
             <div class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-
             <!-- Navbar Links -->
             <ul class="nav-links">
                 <li class="dropdown">
-                    <a href="#about">About Us &#9662;</a> <!-- السهم الصغير ▼ -->
+                    <a href="#about">About Us &#9662;</a> 
                     <ul class="dropdown-list">
                         <li><a href="about.html #about">About Us</a></li>
                         <li><a href="about.html #our-story">Our Story</a></li>
@@ -129,7 +346,7 @@
                         <li><a href="about.html #values">Our Values</a></li>
                     </ul>
                 </li>
-                <li><a href="#our-services">Our Services</a></li>
+                <li><a href="service.html">Our Services</a></li>
                 <li><a href="#private-label">Private Label</a></li>
                 <li><a href="#brand">Alisar Brand</a></li>
                 <li><a href="#quality">Quality</a></li>
@@ -138,9 +355,6 @@
             </ul>
         </nav>
     </header>
-
-
-
 
     <main>
         <section class="hero"
@@ -275,7 +489,7 @@
                         <h3>Consultation & Formulation</h3>
                         <p>Our experts work with you to develop custom formulations that align with your brand vision.
                         </p>
-                        <a href="#consultation" class="service-link">
+                        <a href="service.html" class="service-link">
                             Learn more <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
@@ -287,7 +501,7 @@
                         <img src="image/Designing.jpg" alt="Designing & Registration">
                         <h3>Designing & Registration</h3>
                         <p>We handle packaging design and regulatory compliance to meet industry standards.</p>
-                        <a href="#design" class="service-link">
+                        <a href="service.html" class="service-link">
                             Learn more <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
@@ -299,7 +513,7 @@
                         <img src="image/Manufacturing.jpg" alt="Manufacturing">
                         <h3>Manufacturing</h3>
                         <p>State-of-the-art facilities ensure high-quality, consistent manufacturing.</p>
-                        <a href="#manufacturing" class="service-link">
+                        <a href="service.html" class="service-link">
                             Learn more <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
@@ -311,7 +525,7 @@
                         <img src="image/Packaging.jpg" alt="Packaging">
                         <h3>Packaging</h3>
                         <p>Wide range of packaging options customized to reflect your brand identity.</p>
-                        <a href="#packaging" class="service-link">
+                        <a href="service.html" class="service-link">
                             Learn more <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
@@ -323,7 +537,7 @@
                         <img src="image/Testing.jpg" alt="Product Testing">
                         <h3>Product Testing</h3>
                         <p>Rigorous testing ensures product safety, efficacy, and compliance.</p>
-                        <a href="#testing" class="service-link">
+                        <a href="service.html" class="service-link">
                             Learn more <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
@@ -335,7 +549,7 @@
                         <img src="image/Delivery.jpg" alt="Delivery">
                         <h3>Delivery</h3>
                         <p>Efficient logistics ensure timely delivery of your products worldwide.</p>
-                        <a href="#delivery" class="service-link">
+                        <a href="service.html" class="service-link">
                             Learn more <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
@@ -343,7 +557,7 @@
 
                 </div>
                 <div class="services-cta">
-                    <a href="services.html" class="btn primary-btn">Explore Our Services</a>
+                    <a href="service.html" class="btn primary-btn">Explore Our Services</a>
                 </div>
             </div>
         </section>
