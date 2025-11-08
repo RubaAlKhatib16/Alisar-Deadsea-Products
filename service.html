@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
     :root {
@@ -17,7 +18,7 @@
         --background-medium: #f9f9fb;
         --background-gradient-start: #f0e4ff;
         --background-gradient-end: #e6d0ff;
-        --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+        --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1 );
         --border-radius-small: 5px;
         --border-radius-medium: 10px;
         --border-radius-large: 30px;
@@ -32,19 +33,29 @@
     body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
+        background-color: var(--background-light);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+    }
+
+    .service-section {
+        padding: 60px 0;
     }
 
     .service-centered {
         text-align: left;
-        max-width: 900px;
-        margin-left: 80px;
-        margin-right: auto;
         padding: 60px 0;
     }
 
     .service-centered h2 {
         font-family: 'Playfair Display', serif;
-        font-size: 42px;
+        font-size: clamp(32px, 5vw, 42px); /* Responsive font size */
         margin-bottom: 10px;
         color: var(--text-dark);
     }
@@ -57,77 +68,52 @@
         border-radius: 5px;
     }
 
-    .service-centered .service-img img {
+    .service-img img,
+    .delivery-img img {
         width: 100%;
-        height: 220px;
-        /* حجم موحّد لكل السكشن */
+        height: auto; /* Changed for aspect ratio */
+        max-height: 300px; /* Control max height */
         object-fit: cover;
         object-position: center;
         border-radius: var(--border-radius-medium);
         box-shadow: var(--shadow-light);
         display: block;
         margin: 0 auto 35px;
-        /* يخليها بالوسط */
-        max-width: 900px;
     }
 
-    /* تصغير صورة الـ Delivery وتوسيطها */
-    .delivery-img img {
-        width: 100%;
-        max-width: 900px;
-        height: 220px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: var(--border-radius-medium);
-        box-shadow: var(--shadow-light);
-        display: block;
-        margin: 0 auto 35px auto;
-        /* توسيط كامل */
-    }
-
-
-    /* Paragraph */
     .service-text {
-        font-size: 18px;
+        font-size: clamp(16px, 2.5vw, 18px); /* Responsive font size */
         line-height: 1.8;
         color: var(--text-medium);
         margin-bottom: 30px;
     }
 
-    /* List */
     .service-list {
         text-align: left;
-        margin: auto;
-        max-width: 600px;
         padding-left: 20px;
         line-height: 1.7;
         color: var(--text-medium);
-        font-size: 17px;
+        font-size: clamp(15px, 2.2vw, 17px); /* Responsive font size */
     }
 
     .fade-left,
     .fade-right {
         opacity: 0;
         transition: all 1.2s ease-out;
-
     }
 
-    /* From Left → Right */
     .fade-left {
         transform: translateX(-50px);
     }
 
-    /* From Right → Left */
     .fade-right {
         transform: translateX(50px);
     }
 
-    /* When Visible */
     .show {
         opacity: 1;
         transform: translateX(0);
     }
-
 
     .fade-left.show {
         transition-delay: .1s;
@@ -137,55 +123,52 @@
         transition-delay: .2s;
     }
 
-    /* Services Hero */
     .services-hero {
         position: relative;
-        height: 60vh;
+        height: 50vh; /* Adjusted height */
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         background: url('image/beautyingredients.png') center/cover no-repeat;
-        border-bottom-left-radius: 60px;
-        border-bottom-right-radius: 60px;
+        border-bottom-left-radius: 40px; /* Adjusted radius */
+        border-bottom-right-radius: 40px;
     }
 
-    /* Overlay ناعم */
     .services-hero-overlay {
         position: absolute;
         inset: 0;
         background: rgba(255, 255, 255, 0.45);
         backdrop-filter: blur(4px);
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
     }
 
-    /* Text */
     .services-hero-content {
         position: relative;
-        max-width: 750px;
+        max-width: 90%;
         padding: 20px;
         animation: fadeIn 1.2s ease-out;
     }
 
     .services-hero-content h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 52px;
+        font-size: clamp(40px, 8vw, 52px); /* Responsive font size */
         color: var(--primary-color);
         margin-bottom: 10px;
     }
 
     .services-hero-content p {
-        font-size: 18px;
+        font-size: clamp(16px, 3vw, 18px); /* Responsive font size */
         color: var(--text-medium);
         line-height: 1.7;
     }
 
-    /* Smooth Fade Animation */
     @keyframes fadeIn {
         from {
             opacity: 0;
             transform: translateY(25px);
         }
-
         to {
             opacity: 1;
             transform: translateY(0);
@@ -194,16 +177,14 @@
 
     .product-testing-section {
         background: linear-gradient(to bottom right, #f4f1f9, #faf8fc);
-        padding: 80px 0;
-        border-radius: 0 0 70px 70px;
+        border-radius: 50px; /* Adjusted radius */
     }
-
 
     /* FOOTER */
     .footer-section {
         background-color: #2E1A47;
         color: #ffffff;
-        padding: 70px 40px;
+        padding: 70px 20px; /* Adjusted padding */
         font-family: 'Poppins', sans-serif;
     }
 
@@ -211,7 +192,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 60px;
+        gap: 40px;
         max-width: 1200px;
         margin: auto;
     }
@@ -222,7 +203,6 @@
         flex: 1 1 280px;
     }
 
-    /* Logo Title */
     .footer-about h3 {
         font-family: 'Playfair Display', serif;
         font-size: 34px;
@@ -248,7 +228,6 @@
         color: #EDE6F7;
     }
 
-    /* Section Titles */
     .footer-links h4,
     .footer-contact h4 {
         font-size: 18px;
@@ -256,7 +235,6 @@
         color: #B8A1D9;
     }
 
-    /* Links */
     .footer-links ul {
         list-style: none;
         padding: 0;
@@ -276,15 +254,14 @@
         color: #B8A1D9;
     }
 
-    /* Contact */
     .footer-contact p,
     .footer-contact a {
         color: #EDE6F7;
         font-size: 15px;
         line-height: 1.6;
+        word-break: break-word; /* Prevents overflow */
     }
 
-    /* Social Icons */
     .footer-social a {
         margin-right: 12px;
         font-size: 22px;
@@ -297,7 +274,6 @@
         transform: scale(1.15);
     }
 
-    /* Bottom */
     .footer-bottom {
         text-align: center;
         margin-top: 50px;
@@ -307,22 +283,12 @@
         font-size: 14px;
     }
 
-    /* Responsive */
-    @media(max-width: 768px) {
-        .footer-container {
-            text-align: center;
-            gap: 45px;
-        }
-    }
-
-    /* ===============================
-   NAVBAR (CLEAN & RESPONSIVE)
-=============================== */
+    /* NAVBAR */
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 18px 60px;
+        padding: 15px 5%; /* Use percentage for padding */
         background-color: #fff;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         position: sticky;
@@ -333,18 +299,16 @@
     .logo a {
         text-decoration: none;
         color: inherit;
-        display: block;
     }
 
     .logo h1 {
         font-family: 'Playfair Display', serif;
         font-size: 28px;
-        font-weight: 700;
+        margin: 0;
+        letter-spacing: 3px;
         background: linear-gradient(90deg, #6B5B95, #B8A1D9);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin: 0;
-        letter-spacing: 3px;
     }
 
     .logo span {
@@ -353,7 +317,6 @@
         letter-spacing: 2px;
     }
 
-    /* Links */
     .nav-links {
         display: flex;
         gap: 28px;
@@ -366,13 +329,13 @@
         color: var(--text-dark);
         font-weight: 500;
         transition: .3s;
+        text-decoration: none;
     }
 
     .nav-links a:hover {
         color: var(--primary-color);
     }
 
-    /* Dropdown */
     .dropdown {
         position: relative;
     }
@@ -381,28 +344,41 @@
         display: none;
         position: absolute;
         background: #fff;
-        padding: 10px 0;
+        padding: 8px 0;
         top: 110%;
         left: 0;
         min-width: 200px;
-        border-radius: 10px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        list-style: none;
     }
 
     .dropdown-list li {
+        padding: 0;
+    }
+
+    .dropdown-list li a {
+        display: block;
         padding: 10px 20px;
-        text-align: left;
+        color: var(--text-dark);
+        font-size: 15px;
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    
+    .dropdown-list li:last-child a {
+        border-bottom: none;
     }
 
     .dropdown-list li a:hover {
         color: var(--primary-color);
+        background: rgba(107, 91, 149, 0.07);
     }
 
     .dropdown:hover .dropdown-list {
         display: block;
     }
 
-    /* Hamburger */
     .hamburger {
         display: none;
         flex-direction: column;
@@ -418,9 +394,28 @@
         border-radius: 2px;
     }
 
-    /* Mobile */
-    @media (max-width: 768px) {
+    /* --- RESPONSIVE MEDIA QUERIES --- */
 
+    /* For Tablets and smaller devices */
+    @media (max-width: 992px) {
+        .service-centered {
+            padding: 40px 0;
+        }
+        .footer-container {
+            text-align: center;
+            justify-content: center;
+        }
+        .footer-social {
+            justify-content: center;
+            display: flex;
+        }
+    }
+
+    /* For Mobile devices */
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 15px 20px;
+        }
         .hamburger {
             display: flex;
         }
@@ -431,12 +426,11 @@
             background: #fff;
             width: 100%;
             position: absolute;
-            top: 70px;
+            top: 100%; /* Position below navbar */
             left: 0;
             padding: 15px 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             border-radius: 0 0 15px 15px;
-            z-index: 999;
             text-align: center;
         }
 
@@ -449,116 +443,59 @@
             box-shadow: none;
             background: transparent;
             text-align: center;
+            min-width: unset;
+            padding: 0;
+        }
+        
+        .dropdown-list li a {
+            padding: 12px 20px;
+            border-color: rgba(0,0,0,0.04);
+        }
+
+        .dropdown:hover .dropdown-list {
+            display: none; /* Disable hover on mobile */
+        }
+        
+        .dropdown.open .dropdown-list {
+            display: block; /* Show with JS on click */
+        }
+
+        .hamburger.open div:nth-child(1) {
+            transform: rotate(45deg) translateY(7px);
+        }
+
+        .hamburger.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open div:nth-child(3) {
+            transform: rotate(-45deg) translateY(-7px);
+        }
+        
+        .service-section {
+            padding: 40px 0;
+        }
+        
+        .product-testing-section {
+            border-radius: 30px;
         }
     }
-
-    /* Hamburger Animation */
-    .hamburger.open div:nth-child(1) {
-        transform: rotate(45deg) translateY(7px);
-    }
-
-    .hamburger.open div:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.open div:nth-child(3) {
-        transform: rotate(-45deg) translateY(-7px);
-    }
-
-
-    /* --- FIX DROPDOWN STYLE (remove bullets + spacing + smooth look) --- */
-
-/* إزالة النقاط */
-.dropdown-list,
-.dropdown-list li {
-    list-style: none !important;
-}
-
-/* تحسين الباكجراوند + الحواف */
-.dropdown-list {
-    padding: 8px 0 !important;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-/* ضبط خلايا القائمة */
-.dropdown-list li {
-    padding: 10px 20px !important;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-/* إزالة آخر خط */
-.dropdown-list li:last-child {
-    border-bottom: none;
-}
-
-/* تنسيق الروابط */
-.dropdown-list li a {
-    display: block;
-    color: var(--text-dark);
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-/* hover ناعم */
-.dropdown-list li a:hover {
-    color: var(--primary-color);
-    background: rgba(107, 91, 149, 0.07);
-    border-radius: 6px;
-}
-
-/* ↓↓↓↓ حل المسافة الزايدة تحت الـ navbar ↓↓↓↓ */
-.navbar {
-    margin-bottom: 0 !important;
-    padding-bottom: 10px !important;
-}
-
-/* ↓↓↓↓ ضبط مكان الدروب داون بالضبط تحت العنوان ↓↓↓↓ */
-.dropdown-list {
-    top: 100%;
-    left: 0;
-}
-/* يشيل أي خط تحت الروابط بالNavbar والدروب داون */
-.nav-links a,
-.dropdown-list li a {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-/* حتى ما يظهر خط وقت hover */
-.nav-links a:hover,
-.dropdown-list li a:hover {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-.nav-links a:focus,
-.nav-links a:active {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
 </style>
 
 <body>
    <header>
     <nav class="navbar">
-        <!-- Logo -->
         <div class="logo">
             <a href="index.html">
                 <h1>A L I S A R</h1>
                 <span>Dead Sea Products</span>
             </a>
         </div>
-
-        <!-- Hamburger -->
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
-
-        <!-- Nav Links -->
         <ul class="nav-links">
             <li class="dropdown">
                 <a href="#">About Us</a>
@@ -570,7 +507,6 @@
                     <li><a href="about.html#values">Our Values</a></li>
                 </ul>
             </li>
-
             <li><a href="service.html">Our Services</a></li>
             <li><a href="private-label.html">Private Label</a></li>
             <li><a href="brand.html">Alisar Brand</a></li>
@@ -581,210 +517,135 @@
     </nav>
 </header>
 
-
-    <!-- HERO HEADER -->
-    <section class="services-hero">
-        <div class="services-hero-overlay"></div>
-        <div class="services-hero-content">
-            <h1>Our Services</h1>
-            <p>We transform your vision into high-quality, beautifully formulated personal care products.</p>
-        </div>
-    </section>
-
-
-
-    <section class="service-section">
-        <div class="container service-centered">
-
-            <h2 class="fade-left">Consultation & Formulation</h2>
-
-            <div class="divider"></div>
-
-            <div class="service-img fade-right">
-                <img src="image/service1.png" alt="Consultation & Formulation">
+    <main>
+        <section class="services-hero">
+            <div class="services-hero-overlay"></div>
+            <div class="services-hero-content">
+                <h1>Our Services</h1>
+                <p>We transform your vision into high-quality, beautifully formulated personal care products.</p>
             </div>
+        </section>
 
-            <p class="fade-left service-text">
-                The first step in developing a private label product at Alisar begins with understanding your vision.
-                We take the time to listen, explore ideas, and define the product concept that truly reflects your brand
-                identity and market positioning.
-
-                During this phase, our specialists support you in shaping the formulation, selecting high-quality
-                ingredients, and ensuring the product aligns with performance and regulatory standards.
-                Our goal is to create a product that is both effective and memorable, delivering real value to your
-                target customers.
-            </p>
-
-            <h3 class="fade-left">This phase includes:</h3>
-
-            <ul class="fade-left service-list">
-                <li>Understanding your product vision and target market.</li>
-                <li>Choosing formulas, textures, active ingredients, and fragrance direction.</li>
-                <li>Prototype development and product performance testing.</li>
-                <li>Packaging selection & branding alignment.</li>
-                <li>Determining production quantities and future scaling plans.</li>
-                <li>Cost planning based on formula, packaging, and quantities.</li>
-                <li>Setting a clear production and launch timeline.</li>
-            </ul>
-
-        </div>
-    </section>
-
-    <section class="service-section product-testing-section">
-        <div class="container service-centered">
-
-            <h2 class="fade-left">Designing & Registration</h2>
-
-            <div class="divider"></div>
-
-            <div class="service-img fade-right">
-                <img src="image/designing.png" alt="Designing & Registration">
+        <section class="service-section">
+            <div class="container service-centered">
+                <h2 class="fade-left">Consultation & Formulation</h2>
+                <div class="divider"></div>
+                <div class="service-img fade-right">
+                    <img src="image/service1.png" alt="Consultation & Formulation">
+                </div>
+                <p class="fade-left service-text">
+                    The first step in developing a private label product at Alisar begins with understanding your vision. We take the time to listen, explore ideas, and define the product concept that truly reflects your brand identity and market positioning. During this phase, our specialists support you in shaping the formulation, selecting high-quality ingredients, and ensuring the product aligns with performance and regulatory standards. Our goal is to create a product that is both effective and memorable, delivering real value to your target customers.
+                </p>
+                <h3 class="fade-left">This phase includes:</h3>
+                <ul class="fade-left service-list">
+                    <li>Understanding your product vision and target market.</li>
+                    <li>Choosing formulas, textures, active ingredients, and fragrance direction.</li>
+                    <li>Prototype development and product performance testing.</li>
+                    <li>Packaging selection & branding alignment.</li>
+                    <li>Determining production quantities and future scaling plans.</li>
+                    <li>Cost planning based on formula, packaging, and quantities.</li>
+                    <li>Setting a clear production and launch timeline.</li>
+                </ul>
             </div>
+        </section>
 
-            <p class="fade-left service-text">
-                At this stage, our team assists in bringing your product identity to life.
-                We work closely with you to develop a design direction that reflects your brand values through packaging
-                style,
-                label layout, product narrative, and overall aesthetic presentation.
-                In parallel, we guide you through the required regulatory steps to ensure your product complies with
-                cosmetic
-                standards and market regulations — allowing you to launch confidently and professionally.
-            </p>
-
-        </div>
-    </section>
-
-    <section class=" service-section">
-        <div class="container service-centered">
-
-            <h2 class="fade-left">Manufacturing</h2>
-
-            <div class="divider"></div>
-
-            <div class="service-img fade-right">
-                <img src="image/manufacturing.png" alt="Manufacturing Process">
+        <section class="service-section product-testing-section">
+            <div class="container service-centered">
+                <h2 class="fade-left">Designing & Registration</h2>
+                <div class="divider"></div>
+                <div class="service-img fade-right">
+                    <img src="image/designing.png" alt="Designing & Registration">
+                </div>
+                <p class="fade-left service-text">
+                    At this stage, our team assists in bringing your product identity to life. We work closely with you to develop a design direction that reflects your brand values through packaging style, label layout, product narrative, and overall aesthetic presentation. In parallel, we guide you through the required regulatory steps to ensure your product complies with cosmetic standards and market regulations — allowing you to launch confidently and professionally.
+                </p>
             </div>
+        </section>
 
-            <p class="fade-left service-text">
-                At Alisar, we follow a high-standard manufacturing process supported by our <strong>GMP
-                    certification</strong>.
-                Our production facility is equipped to produce skincare and personal care products with precision,
-                safety, and
-                consistency. Every formula is prepared using high-quality raw materials, carefully measured and mixed
-                under
-                controlled conditions to ensure product stability and effectiveness.
-                <br><br>
-                Our production lines are supported by advanced filling, packaging, and sealing technologies, ensuring
-                every item
-                is delivered with the highest level of care — from mixing to the final packaged product.
-            </p>
+        <section class="service-section">
+            <div class="container service-centered">
+                <h2 class="fade-left">Manufacturing</h2>
+                <div class="divider"></div>
+                <div class="service-img fade-right">
+                    <img src="image/manufacturing.png" alt="Manufacturing Process">
+                </div>
+                <p class="fade-left service-text">
+                    At Alisar, we follow a high-standard manufacturing process supported by our <strong>GMP certification</strong>. Our production facility is equipped to produce skincare and personal care products with precision, safety, and consistency. Every formula is prepared using high-quality raw materials, carefully measured and mixed under controlled conditions to ensure product stability and effectiveness.
+                      
+  
 
-            <h3 class="fade-left">Our facility provides:</h3>
-
-            <ul class="fade-left service-list">
-                <li>GMP-certified production environment.</li>
-                <li>Modern machinery for liquid and cream formulations.</li>
-                <li>Strict hygiene and safety procedures.</li>
-                <li>Quality checks at every stage of production.</li>
-                <li>Professional filling, labeling, and packaging processes.</li>
-            </ul>
-
-        </div>
-    </section>
-
-    <section class="service-section product-testing-section">
-        <div class="container service-centered">
-
-            <h2 class="fade-left">Packaging</h2>
-
-            <div class="divider"></div>
-
-            <div class="service-img fade-right">
-                <img src="image/packaging.png" alt="Packaging Process">
+                    Our production lines are supported by advanced filling, packaging, and sealing technologies, ensuring every item is delivered with the highest level of care — from mixing to the final packaged product.
+                </p>
+                <h3 class="fade-left">Our facility provides:</h3>
+                <ul class="fade-left service-list">
+                    <li>GMP-certified production environment.</li>
+                    <li>Modern machinery for liquid and cream formulations.</li>
+                    <li>Strict hygiene and safety procedures.</li>
+                    <li>Quality checks at every stage of production.</li>
+                    <li>Professional filling, labeling, and packaging processes.</li>
+                </ul>
             </div>
+        </section>
 
-            <p class="fade-left service-text">
-                At Alisar, packaging is more than just a container — it's a reflection of your brand identity.
-                We carefully select packaging that aligns with your brand’s visual character, targeted audience,
-                and market positioning. Our team assists you in choosing high-quality bottles, jars, labels, and
-                finishing details that enhance product appeal and ensure a premium customer experience.
-                <br><br>
-                We collaborate with professional printing houses and trusted suppliers to guarantee durability,
-                consistency, and aesthetic elegance in every final product.
-            </p>
+        <section class="service-section product-testing-section">
+            <div class="container service-centered">
+                <h2 class="fade-left">Packaging</h2>
+                <div class="divider"></div>
+                <div class="service-img fade-right">
+                    <img src="image/packaging.png" alt="Packaging Process">
+                </div>
+                <p class="fade-left service-text">
+                    At Alisar, packaging is more than just a container — it's a reflection of your brand identity. We carefully select packaging that aligns with your brand’s visual character, targeted audience, and market positioning. Our team assists you in choosing high-quality bottles, jars, labels, and finishing details that enhance product appeal and ensure a premium customer experience.
+                      
+  
 
-            <h3 class="fade-left">Our packaging support includes:</h3>
-
-            <ul class="fade-left service-list">
-                <li>Selection of bottles, jars, pumps, and tubes suitable for skincare formulations.</li>
-                <li>Label design guidance and brand identity alignment.</li>
-                <li>Options for matte, glossy, frosted, and eco-friendly finishes.</li>
-                <li>Primary and secondary packaging customization.</li>
-                <li>Coordinating printing, label application, and final presentation.</li>
-            </ul>
-
-        </div>
-    </section>
-
-    <section class="service-section">
-        <div class="container service-centered">
-
-            <h2 class="fade-left">Product Testing</h2>
-
-            <div class="divider"></div>
-
-            <div class="service-img fade-right">
-                <img src="image/testing.png" alt="Product Testing">
+                    We collaborate with professional printing houses and trusted suppliers to guarantee durability, consistency, and aesthetic elegance in every final product.
+                </p>
+                <h3 class="fade-left">Our packaging support includes:</h3>
+                <ul class="fade-left service-list">
+                    <li>Selection of bottles, jars, pumps, and tubes suitable for skincare formulations.</li>
+                    <li>Label design guidance and brand identity alignment.</li>
+                    <li>Options for matte, glossy, frosted, and eco-friendly finishes.</li>
+                    <li>Primary and secondary packaging customization.</li>
+                    <li>Coordinating printing, label application, and final presentation.</li>
+                </ul>
             </div>
+        </section>
 
-            <p class="fade-left service-text">
-                At Alisar, every product undergoes a carefully structured testing process to ensure safety, stability,
-                and performance.
-                Our in-house laboratory is equipped to evaluate each formula during and after production, allowing us to
-                verify ingredient integrity, texture consistency, preservation effectiveness, and skin compatibility.
-                These testing procedures follow international quality and regulatory guidelines, ensuring that each
-                product meets professional standards and is ready for distribution in both local and global markets.
-            </p>
-
-        </div>
-    </section>
-
-    <section class="service-section product-testing-section">
-        <div class="container service-centered">
-
-            <h2 class="fade-left">Delivery</h2>
-            <div class="divider"></div>
-
-            <div class="delivery-img fade-right">
-                <img src="image/delivery.png" alt="Delivery">
+        <section class="service-section">
+            <div class="container service-centered">
+                <h2 class="fade-left">Product Testing</h2>
+                <div class="divider"></div>
+                <div class="service-img fade-right">
+                    <img src="image/testing.png" alt="Product Testing">
+                </div>
+                <p class="fade-left service-text">
+                    At Alisar, every product undergoes a carefully structured testing process to ensure safety, stability, and performance. Our in-house laboratory is equipped to evaluate each formula during and after production, allowing us to verify ingredient integrity, texture consistency, preservation effectiveness, and skin compatibility. These testing procedures follow international quality and regulatory guidelines, ensuring that each product meets professional standards and is ready for distribution in both local and global markets.
+                </p>
             </div>
+        </section>
 
+        <section class="service-section product-testing-section">
+            <div class="container service-centered">
+                <h2 class="fade-left">Delivery</h2>
+                <div class="divider"></div>
+                <div class="delivery-img fade-right">
+                    <img src="image/delivery.png" alt="Delivery">
+                </div>
+                <p class="fade-left service-text">
+                    Once your products are fully manufactured and packaged, they are prepared for delivery with precision and care. Whether you are shipping locally or internationally, we coordinate with trusted logistics partners to ensure safe, timely, and organized delivery. Our goal is to ensure that every product arrives in perfect condition — ready to represent your brand with confidence.
+                </p>
+            </div>
+        </section>
+    </main>
 
-            <p class="fade-left service-text">
-                Once your products are fully manufactured and packaged, they are prepared for delivery with precision
-                and care.
-                Whether you are shipping locally or internationally, we coordinate with trusted logistics partners to
-                ensure
-                safe, timely, and organized delivery.
-                Our goal is to ensure that every product arrives in perfect condition — ready to represent your brand
-                with confidence.
-            </p>
-
-        </div>
-    </section>
-
-
-    <!-- FOOTER -->
     <footer class="footer-section">
         <div class="footer-container">
             <div class="footer-about">
-                <h3>A L I S A R<br></h3>
+                <h3>A L I S A R</h3>
                 <span>Dead Sea Products</span>
-
-                <p>We create luxurious skincare products using natural Dead Sea minerals, blending nature and
-                    science for high-quality personal care solutions.</p>
+                <p>We create luxurious skincare products using natural Dead Sea minerals, blending nature and science for high-quality personal care solutions.</p>
             </div>
-
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
@@ -794,22 +655,18 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h4>Contact Us</h4>
                 <p>
-                    <a href="https://maps.app.goo.gl/1AWxnYiewu81hMth6" target="_blank"
-                        style="color:inherit; text-decoration:none;">
+                    <a href="https://maps.app.goo.gl/1AWxnYiewu81hMth6" target="_blank" style="color:inherit; text-decoration:none;">
                         57 Kenaz Ibn Al-Hussein, Sweileh, Amman 11012, Jordan
                     </a>
                 </p>
                 <p>
-                    <a href="tel:+962795841357" style="color:inherit; text-decoration:none;">Phone: +962 7 9584
-                        1357</a>
+                    <a href="tel:+962795841357" style="color:inherit; text-decoration:none;">Phone: +962 7 9584 1357</a>
                 </p>
                 <p>
-                    <a href="mailto:info@alisardeadseaproducts.jo" style="color:inherit; text-decoration:none;">Email:
-                        info@alisardeadseaproducts.jo</a>
+                    <a href="mailto:info@alisardeadseaproducts.jo" style="color:inherit; text-decoration:none;">Email: info@alisardeadseaproducts.jo</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -818,48 +675,75 @@
                     <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-
         </div>
-        </div>
-
         <div class="footer-bottom">
             <p>&copy; 2025 Alisar Dead Sea Products. All Rights Reserved.</p>
         </div>
     </footer>
-</body>
+
 <script>
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    document.addEventListener('DOMContentLoaded', function ( ) {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const dropdowns = document.querySelectorAll(".dropdown > a");
 
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("open");
-        navLinks.classList.toggle("active");
-    });
+        // Toggle mobile menu
+        hamburger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            hamburger.classList.toggle("open");
+            navLinks.classList.toggle("active");
+        });
 
-    document.addEventListener("scroll", () => {
-        document.querySelectorAll(".fade-left, .fade-right").forEach(el => {
+        // Handle dropdowns on mobile
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                    e.preventDefault(); // Prevent link navigation
+                    e.stopPropagation();
+                    const parent = dropdown.parentElement;
+                    parent.classList.toggle('open');
+                }
+            });
+        });
 
-            let elementTop = el.getBoundingClientRect().top;
-            let elementHeight = el.offsetHeight;
-            let screenHeight = window.innerHeight;
-
-            if (elementTop < screenHeight - elementHeight / 5 && elementTop > 0 - elementHeight) {
-                el.classList.add("show");
+        // Close menu when clicking outside
+        document.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                hamburger.classList.remove("open");
+                navLinks.classList.remove("active");
+                document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
             }
+        });
+        
+        // Stop propagation for nav links container
+        navLinks.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
 
-            else {
-                el.classList.remove("show");
-            }
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll(".fade-left, .fade-right");
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
 
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("show");
+                    // Optional: unobserve after animation
+                    // appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
         });
     });
-    document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        document.querySelector(".nav-links").classList.remove("active");
-        document.querySelector(".hamburger").classList.remove("open");
-    });
-});
-
 </script>
 
+</body>
 </html>
